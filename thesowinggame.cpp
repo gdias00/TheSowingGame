@@ -100,10 +100,9 @@ void drawCircleFill(float cx, float cy, float r, int num_segments)
 jogo(){
 }
 sobre(){
-	// Limpa a janela de visualização com a cor de fundo definida
-	glClear(GL_COLOR_BUFFER_BIT);
-	// Define a cor de fundo de tela como verde
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+	
+	// Define a cor de fundo de tela como preto
+	glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
 	// Define a cor para os textos: amerelo
 	glColor3f(1,1,0);
 
@@ -132,11 +131,45 @@ sobre(){
 	glRasterPos2f(-90,-10);
 	DesenhaTexto(GLUT_BITMAP_9_BY_15,"# Espero que divirta-se!!!!");
 	glRasterPos2f(-90,-20);
-	DesenhaTexto(GLUT_BITMAP_9_BY_15,"# Aperte ESC para sair ou H para os comandos");
+	DesenhaTexto(GLUT_BITMAP_9_BY_15,"# Aperte ESC para sair ou tecla End para os comandos");
 	// Exibe o desenha na janela
 	glutSwapBuffers();
 }
 comandos(){
+	
+	// Define a cor de fundo de tela como preto
+	glClearColor(1.0f, 0.0f,0.0f, 1.0f);
+	// Define a cor para os textos: amerelo
+	glColor3f(1,0,0);
+
+	// Posiciona o texto stroke usando transformações geométricas
+	glPushMatrix();	
+	glTranslatef(-30,50,0);
+	glScalef(0.1, 0.1, 0.1); // diminui o tamanho do fonte
+	//glRotatef(15, 0,0,1); // rotaciona o texto
+	glLineWidth(4); // define a espessura da linha
+	DesenhaTextoStroke(GLUT_STROKE_ROMAN,"COMANDOS:");
+	glPopMatrix();
+
+	// Posição no universo onde o texto bitmap será colocado 
+	glColor3f(0.6,1,0.75);
+	
+	glScalef(1, 1.4, 1);
+	//glRotatef(15, 0,0,1); // rotaciona o texto
+    glRasterPos2f(-90,20); 
+	DesenhaTexto(GLUT_BITMAP_9_BY_15,"--> 1 para selecionar a semente ");
+	glRasterPos2f(-90,14); 
+	DesenhaTexto(GLUT_BITMAP_9_BY_15,"--> 2 para selecionar o sol ");
+	glRasterPos2f(-90,8);
+	DesenhaTexto(GLUT_BITMAP_9_BY_15,"--> 3 para selecionar a água");
+	glRasterPos2f(-90,2);
+	DesenhaTexto(GLUT_BITMAP_9_BY_15,"--> End para os comandos");
+	glRasterPos2f(-90,-4);
+	DesenhaTexto(GLUT_BITMAP_9_BY_15,"--> Home para reiniciar o jogo");
+	glRasterPos2f(-90,-10);
+	DesenhaTexto(GLUT_BITMAP_9_BY_15,"--> ESC para sair do jogo");
+	// Exibe o desenha na janela
+	glutSwapBuffers();
 }
 
 void menu(int key1)

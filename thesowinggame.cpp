@@ -96,11 +96,47 @@ void drawCircleFill(float cx, float cy, float r, int num_segments)
 }
 //--------------------------------------------------------------------------
 
-comandos(){
-}
+
 jogo(){
 }
 sobre(){
+	// Limpa a janela de visualização com a cor de fundo definida
+	glClear(GL_COLOR_BUFFER_BIT);
+	// Define a cor de fundo de tela como verde
+	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+	// Define a cor para os textos: amerelo
+	glColor3f(1,1,0);
+
+	// Posiciona o texto stroke usando transformações geométricas
+	glPushMatrix();	
+	glTranslatef(-80,50,0);
+	glScalef(0.1, 0.1, 0.1); // diminui o tamanho do fonte
+	//glRotatef(15, 0,0,1); // rotaciona o texto
+	glLineWidth(4); // define a espessura da linha
+	DesenhaTextoStroke(GLUT_STROKE_ROMAN,"O JOGO:");
+	glPopMatrix();
+
+	// Posição no universo onde o texto bitmap será colocado 
+	glColor3f(0,1,1);
+	
+	glScalef(1, 1.4, 1);
+	//glRotatef(15, 0,0,1); // rotaciona o texto
+    glRasterPos2f(-90,20); 
+	DesenhaTexto(GLUT_BITMAP_9_BY_15,"# Criado com o objetivo de entender o processo de semeadura, ");
+	glRasterPos2f(-90,16); 
+	DesenhaTexto(GLUT_BITMAP_9_BY_15,"preciso seguir os passos em ordem para completar a fase. ");
+	glRasterPos2f(-90,10);
+	DesenhaTexto(GLUT_BITMAP_9_BY_15,"# Ao final poderá ver a recompensa quando se pensa na natureza");
+	glRasterPos2f(-90,0);
+	DesenhaTexto(GLUT_BITMAP_9_BY_15,"# Pensar no meio ambiente,   garantir um futuro melhor!");
+	glRasterPos2f(-90,-10);
+	DesenhaTexto(GLUT_BITMAP_9_BY_15,"# Espero que divirta-se!!!!");
+	glRasterPos2f(-90,-20);
+	DesenhaTexto(GLUT_BITMAP_9_BY_15,"# Aperte ESC para sair ou H para os comandos");
+	// Exibe o desenha na janela
+	glutSwapBuffers();
+}
+comandos(){
 }
 
 void menu(int key1)
@@ -108,7 +144,7 @@ void menu(int key1)
 	switch(key1)
 	{
 		case 1: //Iniciar
-				jogo();				
+			jogo();				
 			break;
 		
 		case 2: //Sobre o Jogo

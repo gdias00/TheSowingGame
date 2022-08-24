@@ -157,15 +157,15 @@ comandos(){
 	glScalef(1, 1.4, 1);
 	//glRotatef(15, 0,0,1); // rotaciona o texto
     glRasterPos2f(-90,20); 
-	DesenhaTexto(GLUT_BITMAP_9_BY_15,"--> 1 para selecionar a semente ");
+	DesenhaTexto(GLUT_BITMAP_9_BY_15,"--> 1 para selecionar a Semente ");
 	glRasterPos2f(-90,14); 
-	DesenhaTexto(GLUT_BITMAP_9_BY_15,"--> 2 para selecionar o sol ");
+	DesenhaTexto(GLUT_BITMAP_9_BY_15,"--> 2 para selecionar o Sol ");
 	glRasterPos2f(-90,8);
-	DesenhaTexto(GLUT_BITMAP_9_BY_15,"--> 3 para selecionar a água");
+	DesenhaTexto(GLUT_BITMAP_9_BY_15,"--> 3 para selecionar a Agua");
 	glRasterPos2f(-90,2);
 	DesenhaTexto(GLUT_BITMAP_9_BY_15,"--> End para os comandos");
 	glRasterPos2f(-90,-4);
-	DesenhaTexto(GLUT_BITMAP_9_BY_15,"--> Home para reiniciar o jogo");
+	DesenhaTexto(GLUT_BITMAP_9_BY_15,"--> Home para começar/reiniciar o jogo");
 	glRasterPos2f(-90,-10);
 	DesenhaTexto(GLUT_BITMAP_9_BY_15,"--> ESC para sair do jogo");
 	// Exibe o desenha na janela
